@@ -1,4 +1,14 @@
 import random
+def isvalidinput(prompt):
+    while True:
+        try:
+            value = int(input(prompt))
+            if 0 <= value <= 6:
+                return value
+            else:
+                print("Invalid input! Please enter a number between 0 and 6.")
+        except ValueError:
+            print("Invalid input! Please enter a valid number between 0 and 6.")
 def start():
     score = 0
     score1 = 0
@@ -30,7 +40,7 @@ def start():
         ba=0
         bo=1
         while ba!=bo:
-            ba=int(input(""))
+            ba=isvalidinput("Enter number from  1 to 6:   ")
             bo=random.randint(0,6)
             print(f"c{bo}")
             if ba!=bo:
@@ -40,7 +50,7 @@ def start():
         ba=0
         bo=1
         while ba!=bo and score1<=score:
-            bo=int(input(""))
+            bo=isvalidinput("Enter number from  1 to 6:   ")
             ba=random.randint(0,6)
             print(f"c{ba}")
             if ba!=bo:
@@ -55,7 +65,7 @@ def start():
         ba=0
         bo=1
         while ba!=bo:
-            bo=int(input(""))
+            bo=isvalidinput("Enter number from  1 to 6:  ")
             ba=random.randint(0,6)
             print(f"c{ba}")
             if ba!=bo:
@@ -66,7 +76,7 @@ def start():
         ba=0
         bo=1
         while ba!=bo and score1>=score:
-            ba=int(input(""))
+            ba=isvalidinput("Enter number from  1 to 6:  ")
             bo=random.randint(0,6)
             print(f"c{bo}")
             if ba!=bo:
